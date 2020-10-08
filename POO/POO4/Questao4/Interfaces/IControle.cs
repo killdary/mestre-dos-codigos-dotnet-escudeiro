@@ -6,7 +6,6 @@ namespace Questao4.Interfaces
         void DiminuirVolume();
         void AumentarCanal();
         void DiminuirCanal();
-
         void MostrarDadosTV();
     }
 }

@@ -2,12 +2,12 @@ namespace Questao1
 {
     public interface ICalculadora
     {
-         decimal Divisao(decimal a, decimal b);
+         double Divisao(double a, double b);
 
-         decimal Multiplicacao(decimal a, decimal b);
+         double Multiplicacao(double a, double b);
 
-         decimal Soma(decimal a, decimal b);
+         double Soma(double a, double b);
 
-         decimal Subtracao(decimal a, decimal b);
+         double Subtracao(double a, double b);
     }
 }

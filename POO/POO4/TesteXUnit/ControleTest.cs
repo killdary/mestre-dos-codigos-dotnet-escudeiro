@@ -8,7 +8,7 @@ namespace TesteXUnit
         [Fact]
         public void DeveCriarControle(){
             
-            var televisao = new Televisao();
+            var televisao = new Televisao(0,100,0,100);
             var controle = new Controle(televisao);
             Assert.NotNull(controle);
         }
@@ -16,7 +16,7 @@ namespace TesteXUnit
         [Fact]
         public void DeveAumentarVolume()
         {
-            var televisao = new Televisao();
+            var televisao = new Televisao(0,100,0,100);
             televisao.Volume = 5;
 
             var controle = new Controle(televisao);
@@ -28,7 +28,7 @@ namespace TesteXUnit
         [Fact]
         public void DeveDiminuirVolume()
         {
-            var televisao = new Televisao();
+            var televisao = new Televisao(0,100,0,100);
             televisao.Volume = 5;
 
             var controle = new Controle(televisao);
@@ -42,7 +42,7 @@ namespace TesteXUnit
         [Fact]
         public void DeveAumentarCanal()
         {
-            var televisao = new Televisao();
+            var televisao = new Televisao(0,100,0,100);
             televisao.Canal = 10;
 
             var controle = new Controle(televisao);
@@ -55,7 +55,7 @@ namespace TesteXUnit
         [Fact]
         public void DeveDiminuirCanal()
         {
-            var televisao = new Televisao();
+            var televisao = new Televisao(0,100,0,100);
             televisao.Canal = 10;
 
             var controle = new Controle(televisao);

@@ -20,7 +20,7 @@ namespace TesteNUnit
         [TestCase(1000, 530, 600)]
         [TestCase(1000, 500, 700)]
         [TestCase(1000, 1010, 1500)]
-        public void DeveSacarDinheiroCasoTenhaSaldoEDescontarATaxa(double limite, double saldo, double saque){
+        public void DeveSacarDinheiroCasoTenhaSaldoEDescontarATaxa(decimal limite, decimal saldo, decimal saque){
             var conta = new ContaEspecial(1234, limite);
             conta.Saldo = saldo;
             Assert.AreEqual(saque, conta.Sacar(saque));
@@ -29,7 +29,7 @@ namespace TesteNUnit
         [TestCase(1000, -350, 500, 150)]
         [TestCase(650, 100, 490, 590)]
         [TestCase(100, 1000,  995, 1995)]
-        public void DeveDepositar(double limite, double saldo, double deposito, double valorEsperado){
+        public void DeveDepositar(decimal limite, decimal saldo, decimal deposito, decimal valorEsperado){
             var conta = new ContaEspecial(1234, limite);
             conta.Saldo = saldo;
             conta.Depositar(deposito);
@@ -39,7 +39,7 @@ namespace TesteNUnit
         [TestCase(1000, -350,  5150, 0)]
         [TestCase(650,  100,  5000, 0)]
         [TestCase(100,  1000, 10000, 0)]
-        public void NaoDeveSacarContaNaoTemSaldoMesmoComLimite(double limite, double saldo, double saque, double valorEsperado){
+        public void NaoDeveSacarContaNaoTemSaldoMesmoComLimite(decimal limite, decimal saldo, decimal saque, decimal valorEsperado){
             var conta = new ContaEspecial(1234, limite);
             conta.Saldo = saldo;
             Assert.AreEqual(valorEsperado, conta.Sacar(saque));

@@ -12,19 +12,19 @@ namespace Questao4.Entidade
         public Televisao Televisao { get; set; }
 
         public void AumentarVolume(){
-            Televisao.Volume++;
+            Televisao.AumentarVolume();
         }
 
         public void DiminuirVolume(){
-            Televisao.Volume--;
+            Televisao.DiminuirVolume();
         }
 
         public void AumentarCanal(){
-            Televisao.Canal++;
+            Televisao.AumentarCanal();
         }
 
         public void DiminuirCanal(){
-            Televisao.Canal--;
+            Televisao.DiminuirCanal();
         }
         
         public void MostrarDadosTV(){

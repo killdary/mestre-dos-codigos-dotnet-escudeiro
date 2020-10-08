@@ -1,3 +1,4 @@
+using System;
 using System.Globalization;
 using Questao3.Interfaces;
 
@@ -5,16 +6,17 @@ namespace Questao3.Entidades
 {
     public class ContaCorrente : ContaBancaria, IImprimivel
     {
-        public ContaCorrente(int conta, double taxa)
+        public ContaCorrente(int conta, decimal taxa)
         {
             Conta = conta;
             TaxaDeOperacao = taxa;
         }
 
-        public double TaxaDeOperacao { get; set; }
-        public override void Depositar(double Valor)
+        public decimal TaxaDeOperacao { get; set; }
+        public override void Depositar(decimal Valor)
         {
-            if(!ValidarTransacaoPermitida(Valor)){
+            if (!ValidarTransacaoPermitida(Valor))
+            {
                 return;
             }
             Saldo += Valor;
@@ -22,18 +24,19 @@ namespace Questao3.Entidades
 
         }
 
-        public void MostrarDados()
+        public override void MostrarDados()
         {
             var culture = CultureInfo.CreateSpecificCulture("pt-BR");
-            System.Console.WriteLine($"Conta Corrente:\n"+
-                                     $"--Conta:{Conta}\n"+
-                                     $"--Taxa de Operação:{TaxaDeOperacao.ToString("C", culture)}\n"+
+            Console.WriteLine($"Conta Corrente:\n" +
+                                     $"--Conta:{Conta}\n" +
+                                     $"--Taxa de Operação:{TaxaDeOperacao.ToString("C", culture)}\n" +
                                      $"--Saldo:{Saldo.ToString("C", culture)}\n");
         }
 
-        public override double Sacar(double Valor)
+        public override decimal Sacar(decimal Valor)
         {
-            if(!ValidarTransacaoPermitida(Valor, true)){
+            if (!ValidarTransacaoPermitida(Valor, true))
+            {
                 return 0;
             }
 
@@ -42,18 +45,27 @@ namespace Questao3.Entidades
             return Valor;
         }
 
-        private bool ValidarTransacaoPermitida(double Valor, bool sacar = false){
-            Valor = (sacar) ? Valor * -1: Valor;
-
-            if(Saldo + Valor < TaxaDeOperacao){
-                System.Console.WriteLine($"O saldo {Saldo} após o saque do valor {Valor} será inferior a taxa de operação {TaxaDeOperacao}.");
+        private bool ValidarTransacaoPermitida(decimal Valor, bool sacar = false)
+        {
+            if (Valor < 0)
+            {
+                Console.WriteLine($"O valor {Saldo} não pode ser um valor negativo.");
                 return false;
             }
-            
+
+            Valor = (sacar) ? Valor * -1 : Valor;
+
+            if (Saldo + Valor < TaxaDeOperacao)
+            {
+                Console.WriteLine($"O saldo {Saldo} após o saque do valor {Valor} será inferior a taxa de operação {TaxaDeOperacao}.");
+                return false;
+            }
+
             return true;
         }
 
-        private void AplicarTaxaDeTransacao(){
+        private void AplicarTaxaDeTransacao()
+        {
             Saldo -= TaxaDeOperacao;
         }
     }

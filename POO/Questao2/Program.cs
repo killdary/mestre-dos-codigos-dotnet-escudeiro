@@ -10,7 +10,7 @@ namespace Questao2
             Console.WriteLine("### POO - Questão 2");
             var pessoa = new Pessoa("Fulano de Tal", new DateTime(1990, 05, 01), 1.9);
 
-            System.Console.WriteLine(pessoa.ToString());
+            Console.WriteLine(pessoa.ToString());
         }
     }
 }

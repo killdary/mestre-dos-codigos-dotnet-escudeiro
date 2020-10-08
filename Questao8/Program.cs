@@ -8,16 +8,16 @@ namespace Questao8
     {
         static void Main(string[] args)
         {
-            System.Console.WriteLine("### Questão 8 ###");
+            Console.WriteLine("### Questão 8 ###");
 
             string valor = string.Empty;
-            decimal valorDecimal;
-            var listaValores = new List<decimal>();
+            double valorDouble;
+            var listaValores = new List<double>();
             var count = 1;
 
             while (true)
             {
-                System.Console.WriteLine($"Digite o {count}º valor ou digite SAIR para encerrar a aplicação:");
+                Console.WriteLine($"Digite o {count}º valor ou digite SAIR para encerrar a aplicação:");
                 valor = Console.ReadLine();
 
                 if (string.Equals(valor, "SAIR"))
@@ -25,24 +25,24 @@ namespace Questao8
                     break;
                 }
 
-                if (decimal.TryParse(valor, out valorDecimal))
+                if (double.TryParse(valor, out valorDouble))
                 {
-                    listaValores.Add(valorDecimal);
+                    listaValores.Add(valorDouble);
                     count++;
                 }
                 else{
-                    System.Console.WriteLine("valor inválido Tente novamente");
+                    Console.WriteLine("valor inválido Tente novamente");
                 }
             }
 
             if (!listaValores.Any())
             {
-                System.Console.WriteLine("Lista vazia, nenhum valor informado.");
+                Console.WriteLine("Lista vazia, nenhum valor informado.");
             }
             else 
             {
-                System.Console.WriteLine($"Valores crescentes: {listaValores.OrderBy(x => x).Select(x => x.ToString()).Aggregate((i, j) => i + ", " + j)}");
-                System.Console.WriteLine($"Valores crescentes: {listaValores.OrderByDescending(x => x).Select(x => x.ToString()).Aggregate((i, j) => i + ", " + j)}");
+                Console.WriteLine($"Valores crescentes: {listaValores.OrderBy(x => x).Select(x => x.ToString()).Aggregate((i, j) => i + ", " + j)}");
+                Console.WriteLine($"Valores crescentes: {listaValores.OrderByDescending(x => x).Select(x => x.ToString()).Aggregate((i, j) => i + ", " + j)}");
             }
 
 

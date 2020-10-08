@@ -14,7 +14,7 @@ namespace Questao3
             while (count <= 100)
             {
                 if(count % 3 == 0)
-                    System.Console.Write($"{count}, ");
+                    Console.Write($"{count}, ");
                 count++;
             }
         }

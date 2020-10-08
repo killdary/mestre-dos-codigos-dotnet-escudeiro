@@ -11,18 +11,18 @@ namespace Questao4
         {
             Console.WriteLine("### Questao 4 ###");
 
-            System.Console.WriteLine("Digite a quantidade de Alunos:");
-            var qtdAlunos = Convert.ToInt32(System.Console.ReadLine());
+            Console.WriteLine("Digite a quantidade de Alunos:");
+            var qtdAlunos = Convert.ToInt32(Console.ReadLine());
 
             var alunos = new List<Aluno>();
 
             for (int i = 0; i < qtdAlunos; i++)
             {
-                System.Console.WriteLine($"Digite o nome do Aluno {i+1}:");
-                var nome = System.Console.ReadLine();
+                Console.WriteLine($"Digite o nome do Aluno {i+1}:");
+                var nome = Console.ReadLine();
 
-                System.Console.WriteLine($"Digite a nota do Aluno {i+1}:");
-                var nota = Convert.ToDecimal(System.Console.ReadLine());
+                Console.WriteLine($"Digite a nota do Aluno {i+1}:");
+                var nota = Convert.ToDouble(Console.ReadLine());
 
                 alunos.Add(new Aluno{
                     Nome = nome,
@@ -34,7 +34,7 @@ namespace Questao4
 
             for (int i = 0; i < listaAlunosAcimaDe7.Count; i++)
             {
-                System.Console.WriteLine($"O aluno {listaAlunosAcimaDe7[i].Nome} tem nota igual a {listaAlunosAcimaDe7[i].Nota}.");
+                Console.WriteLine($"O aluno {listaAlunosAcimaDe7[i].Nome} tem nota igual a {listaAlunosAcimaDe7[i].Nota}.");
             }
         }
     }

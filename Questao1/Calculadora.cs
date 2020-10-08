@@ -2,12 +2,12 @@ namespace Questao1
 {
     public class Calculadora : ICalculadora
     {
-        public decimal Divisao(decimal a, decimal b) => a / b;
+        public double Divisao(double a, double b) => a / b;
 
-        public decimal Multiplicacao(decimal a, decimal b) => a * b ;
+        public double Multiplicacao(double a, double b) => a * b ;
         
-        public decimal Soma(decimal a, decimal b) => a + b;
+        public double Soma(double a, double b) => a + b;
 
-        public decimal Subtracao(decimal a, decimal b) => a - b;
+        public double Subtracao(double a, double b) => a - b;
     }
 }

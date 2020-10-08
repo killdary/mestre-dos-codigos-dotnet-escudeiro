@@ -13,13 +13,13 @@ namespace Questao7
 
             for (int i = 0; i < 4; i++)
             {
-                System.Console.WriteLine($"Digite o {i+1}º valor:");
+                Console.WriteLine($"Digite o {i+1}º valor:");
                 listaValores.Add(Convert.ToInt32(Console.ReadLine()));
             }
 
             var somaValoresPares = listaValores.Where(x => x % 2 == 0).Sum();
 
-            System.Console.WriteLine($"A soma dos valores pares é igual a {somaValoresPares}");
+            Console.WriteLine($"A soma dos valores pares é igual a {somaValoresPares}");
 
         }
     }

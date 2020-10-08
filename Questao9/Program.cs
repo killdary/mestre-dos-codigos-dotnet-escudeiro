@@ -8,7 +8,7 @@ namespace Questao9
     {
         static void Main(string[] args)
         {
-            System.Console.WriteLine("### Questão 9 ###");
+            Console.WriteLine("### Questão 9 ###");
 
             var listaDeInteiros = new List<int>();
             var random = new Random();
@@ -49,16 +49,16 @@ namespace Questao9
 
         static void Imprimir(string mensagem, List<int> lista)
         {
-            System.Console.WriteLine($"{mensagem} {lista.Select(x => x.ToString()).Aggregate((i, j) => i + ", " + j)}");
+            Console.WriteLine($"{mensagem} {lista.Select(x => x.ToString()).Aggregate((i, j) => i + ", " + j)}");
         }
 
         static void ImprimirUmValor(string mensagem, int valor){
-            System.Console.WriteLine($"{mensagem} {valor}");
+            Console.WriteLine($"{mensagem} {valor}");
         }
         
         static void ImprimirArray(string mensagem, int[] array)
         {
-            System.Console.WriteLine($"{mensagem} {string.Join(", ", array.ToArray())}");
+            Console.WriteLine($"{mensagem} {string.Join(", ", array.ToArray())}");
         }
 
         static int ReceberInteiroValido(){
@@ -66,14 +66,14 @@ namespace Questao9
 
             while (true)
             {
-                System.Console.WriteLine("Digite um número para que será procurado:");
+                Console.WriteLine("Digite um número para que será procurado:");
                 var i =  Console.ReadLine();
 
                 if (int.TryParse(i, out valor))
                 {
                     break;
                 }else{
-                    System.Console.WriteLine("Valor informádo inválido!");
+                    Console.WriteLine("Valor informádo inválido!");
                 }
             }
 

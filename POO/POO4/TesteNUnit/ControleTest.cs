@@ -9,11 +9,12 @@ namespace TesteNUnit
         public void Setup()
         {
         }
-        
+
         [Test]
-        public void DeveCriarControle(){
-            
-            var televisao = new Televisao();
+        public void DeveCriarControle()
+        {
+
+            var televisao = new Televisao(0, 100, 0, 100);
             var controle = new Controle(televisao);
             Assert.NotNull(controle);
         }
@@ -21,7 +22,7 @@ namespace TesteNUnit
         [Test]
         public void DeveAumentarVolume()
         {
-            var televisao = new Televisao();
+            var televisao = new Televisao(0, 100, 0, 100);
             televisao.Volume = 5;
 
             var controle = new Controle(televisao);

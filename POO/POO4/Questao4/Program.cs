@@ -9,7 +9,7 @@ namespace Questao4
         {
             Console.WriteLine("### POO - Questão 4 ###");
 
-            Televisao tv = new Televisao();
+            Televisao tv = new Televisao(0, 100, 0, 100);
             Controle controle = new Controle(tv);
 
             controle.AumentarVolume();
@@ -18,7 +18,7 @@ namespace Questao4
             controle.AumentarVolume();
             controle.DiminuirVolume();
 
-            
+
             controle.AumentarCanal();
             controle.AumentarCanal();
             controle.AumentarCanal();
